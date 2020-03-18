@@ -1,0 +1,427 @@
+/*
+                                    ======================
+                ====================== Start Main Rules ==================================
+                                    ======================
+*/
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+
+}
+:root{
+    --mainColor:#7b5244;
+    --subColor:#333;
+}
+.container{
+    width:85%;
+    margin:auto;
+}
+body{
+    font-family: "PT Sans";
+    height: 5000px;
+}
+.my{
+    margin:75px 0;
+}
+.list-unstyled{
+    list-style-type: none;
+    
+}
+a{
+    text-decoration: none;
+}
+
+/*                                  ======================
+                ==================== End Main Rules ===========================
+                                    ======================
+*/
+
+/*                                  =====================
+                =================== Start Header Section ============================
+                                    ======================
+*/
+
+header .header-content{
+    display:flex;
+    justify-content: space-between;
+    padding:20px 0;
+    align-items: center;
+    
+}
+.header-content img{
+    max-width: 170px;
+}
+.header-content nav > ul > li{
+    display: inline-block;
+    position: relative;
+}
+.header-content img{
+    flex-grow:1;
+}
+.header-content nav{
+    flex-grow:4;
+    text-align:center;
+}
+.header-content nav ul li .link{
+    display:block;
+    color: var(--mainColor);
+    text-transform: capitalize;
+    padding:10px 25px;
+    font-weight: bold;
+    position: relative;
+}
+.header-content nav ul li .link::before{
+    content:"";
+    position: absolute;
+    top:0;
+    right: 0;
+    border-width:0 2px;
+    border-style: solid;
+    width: 100%;
+    height: 110%;
+    border-color: var(--mainColor);
+    transition: transform .2s;
+    transform-origin: left;
+    transform: scale3d(1,0,1);
+
+}
+.header-content nav ul li .link:hover::before{
+    transform: scale3d(1,1,1);
+}
+.header-content nav ul li .link::after{
+    content:"";
+    position: absolute;
+    top:0;
+    right: 0;
+    border-width:2px 0;
+    border-style: solid;
+    width: 103%;
+    height: 100%;
+    border-color: var(--mainColor);
+    transition: transform .2s;
+    transform: scale3d(0,1,1);
+    transform-origin: left;
+}
+.header-content nav ul li .link:hover::after{
+    transform: scale3d(1,1,1);
+    transition-delay:.2s ;
+}
+.header-content .login{
+    flex-grow:2;
+    text-align: right;
+}
+.header-content .login i{
+    margin:0 15px;
+}
+.header-content .login:last-child{
+    position: relative;
+    
+}
+.header-content .login:last-child::after{
+    position: absolute;
+    content: "0";
+    width: 12px;
+    height: 18px;
+    background-color: var(--mainColor);
+    color: #fff;
+    font-size: 15px;
+    right: 13px;
+    bottom: -7px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.dropdown{
+    position: absolute;
+    width:400px;
+    left: -4px;
+    top: 50px;
+    background-color:#fff;
+    border:4px solid var(--mainColor);
+    display: flex;
+    justify-content: space-between;
+    transform:scale(0);
+    transition:transform 0.5s;
+}
+.header-content nav ul li:hover .dropdown{
+    transform:scale(1);
+}
+.dropdown ul{
+    display:table-cell;
+}
+.dropdown ul li a{
+    padding: 0 0px 10px 5px;
+    color:var(--mainColor);
+    display:block;
+}
+
+.slider img{
+    width:100%;
+}
+
+/*                                  =====================
+                =================== End Header Section ============================
+                                    ======================
+*/
+/*                                  =====================
+                =================== Start category Section ============================
+                                    ======================
+*/
+.category-header{
+    text-align:center;
+}
+.category-header h2{
+    margin-bottom:10px;
+}
+.category-header .line{
+    width:70px;
+    height: 2px;
+    background-color:var(--mainColor);
+    display:inline-block;
+    margin-bottom: 40px;
+    transition:width 0.5s;
+}
+.category-header:hover .line{
+    width:100px;
+    
+}
+.category .container .category-items{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+.category-items .item{
+    position: relative;
+}
+.category-items .item img{
+    width:100%;
+    margin-bottom: 20px;
+}
+
+.category-items .item span{
+    color:gray;
+
+}
+.category-items .item .icon{
+    width:30px;
+    height: 30px;
+    color:#fff;
+    background-color: var(--mainColor);
+    line-height: 30px;
+    display:block;
+    text-align:center;
+    position: absolute;
+    bottom:0;
+    right:0;
+    opacity:0;
+    transition:opacity 1s;
+}
+.category-items .item:hover .icon{
+    opacity:1;
+}
+/*Start DisCount */
+.discount {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 10px;
+    margin-top: 40px;
+}
+.discount .discount-header{
+    grid-column: 1/3;
+    background-color: #f7f3ef;
+    padding:20px 0 0 20px;
+    position: relative;
+}
+.discount-header .top{
+    position: relative;
+    padding:0 0 20px 40px;
+}
+.discount-header .top + p{
+    line-height: 1.7;
+}
+.discount-header .top .icon{
+    position: absolute;
+    font-size:40px;
+    color: var(--mainColor);
+    left:-6px;
+    top:8px;
+}
+.discount-header .bollets{
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin:0 5px 5px 0;
+}
+.discount-header .bollets span{
+    display: inline-block;
+    width:40px;
+    height: 2px;
+    background-color: var(--mainColor);
+}
+.discount-item{
+    overflow: hidden;
+}
+.discount .discount-item img{
+width: 100%;
+transition:transform .5s;
+}
+.discount .discount-item:hover img{
+    transform: scale(1.1);
+}
+.discount-item {
+    position: relative;
+}
+
+.discount-item .discount-item-info{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    text-transform: capitalize;
+}
+.discount-item .discount-item-info span{
+    color: var(--mainColor);
+}
+/* End DisCount */
+/* Start Spride */
+.spride{
+    display:flex;
+    margin:40px 0;
+}
+.spride .spride-item{
+    flex:1;
+    text-align: center;
+    border-right: 2px solid var(--mainColor);
+}
+.spride-item:last-child{
+    border-right: none;
+}
+.spride-item .spride-icon{
+    background-image: url(../images/service-icon.png);
+    height: 55px;
+    background-repeat: no-repeat;
+}
+.spride-icon-1{
+    background-position: center 5px;
+    transition: all 0.5s;
+}
+.spride-item:hover .spride-icon-1{
+    background-position: center -86px;
+    transition: all 0.5s;
+}
+.spride-icon-2{
+    background-position: center -180px;
+    transition: all 0.5s;
+}
+.spride-item:hover .spride-icon-2{
+    background-position: center -273px;
+}
+.spride-icon-3{
+    background-position: center -366px;
+    transition: all 0.5s;
+}
+.spride-item:hover .spride-icon-3{
+    background-position: center -455px;
+}
+.spride-icon-4{
+    background-position: center -549px;
+    transition: all 0.5s;
+}
+.spride-item:hover .spride-icon-4{
+    background-position: center -639px;
+}
+.spride-item .spride-icon-5{
+    background-position: center -734px;
+}
+.spride-item:hover .spride-icon-5{
+    background-position: center -826px;
+    transition: all 0.5s;
+}
+.spride-item h3{
+    font-size: 17px;
+}
+.spride-item span{
+    color: gray;
+}
+/* End Spride */
+
+/*                                  =====================
+                =================== End category Section ============================
+                                    ======================
+*/
+
+/*                                  =====================
+                =================== Start Product Section ============================
+                                    ======================
+*/
+
+.products{
+    text-align:center
+}
+.products .list-products{
+    display: flex;
+    justify-content: center;
+}
+.list-products li{
+    margin:20px 40px;
+    color: var(--subColor);
+    font-weight: bold;
+    font-size: 16px;
+}
+.products-items {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    margin:20px 0;
+}
+.products-item .main-img{
+    position: relative;
+}
+.products-item .img-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    width: 100%;
+}
+.products-item:hover .img-overlay{
+    transform: scaleX(1);
+}
+.products-item .img-overlay .items ul{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.products-item .items ul li{
+width: 40px;
+height: 40px;
+text-align: center;
+display: inline-block;
+background-color: var(--subColor);
+}
+.products-item ul li i{
+    color:#fff;
+    line-height: 40px;
+}
+.item-info ul,span,h3 {
+    text-align: left;
+    margin-left: 30px;
+}
+.item-info span{
+    display: block;
+    margin-bottom:5px ;
+    color: gray;
+}
+.item-info ul li i {
+    color: #000000;
+}
+.item-info ul li .active{
+    color:goldenrod;
+}
+/*                                  =====================
+                =================== End Product Section ============================
+                                    ======================
+*/
+
